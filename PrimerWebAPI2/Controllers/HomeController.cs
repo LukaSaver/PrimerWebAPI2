@@ -26,5 +26,11 @@ namespace PrimerWebAPI2.Controllers
 
             return View();
         }
+        public ActionResult Admin()
+        {
+            string apiUri = Url.HttpRouteUrl("DefaultApi", new { Controller = "admin" });
+            ViewBag.ApiUri = new Uri(Request.Url, apiUri).AbsoluteUri.ToString();
+            return View();
+        }
     }
 }
